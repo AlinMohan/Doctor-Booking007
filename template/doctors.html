@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block title %}
+doctor
+{% endblock %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<br>
+<div class="container">
+<div style="background-image: url({% static '/images/hos.jpg' %});">
+
+<h1 style="text-align:center;">Doctors Page</h1>
+<p style="padding:10px; text-align: center;"><b>Only Access for Doctors only. User Registration is provided Separately</b></p>
+<div class="col-1 text-left pl-md-3">
+<form style="margin-left: 16rem;" action="docreg" method="post">
+    {% csrf_token %}
+    <label style="text-align: center;">FirstName</label>
+    <input size="70" type="text" name="fname" required><br>
+    <label style="text-align: center;">LastName</label>
+    <input size="70" type="text" name="lname" required><br>
+    <label style="text-align: center;">Place</label>
+    <input size="70" type="text" name="place" required><br>
+    <label style="text-align: center;">Phone</label>
+    <input size="70" type="tel" name="phone" required><br>
+    <label style="text-align: center;">Email</label>
+    <input size="70" type="email" name="email" required><br>
+    <label style="text-align: center;">Department</label>
+    <select required name="dept">
+        <option selected></option>
+        <option>Cardiology</option>
+        <option>Neurology</option>
+        <option>Psychology</option>
+        <option>ENT</option>
+        <option>Ophthalmology</option>
+    </select>
+    <label style="text-align: center;">Username</label>
+    <input size="70" type="text" name="uname" required><br>
+    <label style="text-align: center;">Password</label>
+    <input size="70" type="password" name="pass" required><br><br>
+    <!-- <input type="Submit" value="Register"><br><br> -->
+    <button class="btn btn-primary" type="submit">Register</button>
+
+</form ><br>
+    <form style="margin-left: 16rem;" action="doclogin" method="post">
+        {% csrf_token %}
+        <!-- <input type="submit" value="Login"> -->
+        <button class="btn btn-primary" type="submit">Login</button>
+    </form>
+    </div>
+</div><br><br><br><br><br>
+</body>
+{% endblock %}

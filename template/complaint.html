@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}
+complaint
+{% endblock %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<br><br>
+<div style="background-image: url({% static '/images/hosbg.jpg' %});" class="container"><br>
+
+<h1 style="text-align:center;">Complaint Here</h1>
+<div class="col-1 text-left pl-md-3">
+<form style="margin-left: 16rem;" action="complainting" method="post">
+    {% csrf_token %}
+    <label style="text-align: center;">ComplaintHere</label>
+    <textarea name="comp" rows="3" cols="50" required></textarea><br>
+    <label style="text-align: center;">Date</label>
+    <input size="70" type="date" name="date" required><br>
+    <label style="text-align: center;">PatientName</label>
+    <input size="70" type="text" name="patname" required><br>
+    <label style="text-align: center;">PhoneNumber</label>
+    <input size="70" type="text" name="phone" required><br>
+    <label style="text-align: center;">Place</label>
+    <input size="70" type="text" name="place" required><br><br>
+
+    <!-- <input type="submit"> -->
+    <button class="btn btn-primary" type="submit">Submit</button><br><br><br><br><br><br>
+</form>
+</div>
+</div>
+{% endblock %}

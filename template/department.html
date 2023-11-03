@@ -1,0 +1,48 @@
+
+{% extends 'base.html' %}
+
+{% block title %}
+department
+{% endblock %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<div class="container"><br><br>
+<h1 style="text-align: center;">Department Page</h1><br><br>
+<div class="card-deck">
+<div class="card" style="width: 18rem;">
+  <img src="{% static '/images/cardio.jpg' %}" class="card-img-top" alt="" height="150px">
+  <div class="card-body">
+    <h5 class="card-title">Cardiology</h5>
+    <p class="card-text">Cardiology is a branch of medicine that deals with disorders of the heart and the cardiovascular system.</p>
+  </div>
+</div>
+
+<div class="card" style="width: 18rem;">
+  <img src="{% static '/images/eye.jpg' %}" class="card-img-top" alt="..." height="150px">
+  <div class="card-body">
+    <h5 class="card-title">Ophthalmology</h5>
+    <p class="card-text"> Ophthalmology is the study of medical conditions relating to the eye.</p>
+  </div>
+</div>
+
+  <div class="card" style="width: 18rem;">
+  <img src="{% static '/images/brain.jpg' %}" class="card-img-top" alt="..." height="150px">
+  <div class="card-body">
+    <h5 class="card-title">Neurology</h5>
+    <p class="card-text">Neurology is the branch of medicine dealing with the diagnosis and treatment of all categories of conditions and disease involving the brain, the spinal cord and the peripheral nerves.</p>
+  </div>
+</div>
+
+  <div class="card" style="width: 18rem;">
+  <img src="{% static '/images/diet.jpg' %}" class="card-img-top" alt="..." height="150px">
+  <div class="card-body">
+    <h5 class="card-title">Dietitian</h5>
+    <p class="card-text">A dietitian, medical dietitian, is an expert in identifying and treating disease-related malnutrition and in conducting medical nutrition therapy, for example designing an enteral tube feeding regimen or mitigating the effects of cancer cachexia.</p>
+  </div>
+</div>
+</div>
+</div>
+{% endblock %}
